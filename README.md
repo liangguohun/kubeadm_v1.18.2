@@ -1,31 +1,30 @@
-# Install Kubernetes v1.13.0
-
-https://v1-13.docs.kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
-
-Requires 2 CPUs
+# Install kubeadm v1.18.2
 
 * Use Aliyun Yum repo
 * Use Aliyun Docker repo
 * Use Aliyun Kubernetes repo
-* Docker 18.06
-* kubeadm 1.13
-* kubelet 1.13
-* kubectl 1.13
-* flannel v0.10.0
+* Docker 19.03.11
+* kubeadm 1.18.2
+* kubelet 1.18.2
+* kubectl 1.18.2
+* calico  v1.14.2
 
-## Kubernetes Images
+## pre did
+chmod +x *.sh
 
-Since Kubernetes 1.11
+## init master
+kubeadm_init_master.sh
 
-```bash
-kubeadm config images list
-kubeadm config images pull
+## init node
 ```
+> kubeadm_join_node.sh
+then run the command on master to get the join command
+> kubeadm token create --print-join-command
+run the result on node
+then run 
+./kubeadm_join_node_must_test.sh
+```
+## init dashboard
+cd k8s_dashboard_v2.0.0
+./install-dashboard.sh
 
-* k8s.gcr.io/kube-apiserver:v1.13.0
-* k8s.gcr.io/kube-controller-manager:v1.13.0
-* k8s.gcr.io/kube-scheduler:v1.13.0
-* k8s.gcr.io/kube-proxy:v1.13.0
-* k8s.gcr.io/pause:3.1
-* k8s.gcr.io/etcd:3.2.24
-* k8s.gcr.io/coredns:1.2.6
