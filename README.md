@@ -28,3 +28,8 @@ then run
 cd k8s_dashboard_v2.0.0
 ./install-dashboard.sh
 
+## tools
+some .sh may no work£¬because win format.
+net tool dos2unix
+> dos2unix *.sh
+
