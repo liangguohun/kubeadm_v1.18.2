@@ -15,3 +15,4 @@ yum makecache -y
 yum repolist all
 
 yum install wget -y
+ntpdate time1.aliyun.com
