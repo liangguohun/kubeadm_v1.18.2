@@ -29,7 +29,13 @@ cd k8s_dashboard_v2.0.0
 ./install-dashboard.sh
 
 ## tools
-some .sh may no work£¬because win format.
+some .sh may no workÂ£Â¬because win format.
 net tool dos2unix
 > dos2unix *.sh
 
+## note:
+
+open port limit: \
+vi /etc/kubernetes/manifests/kube-apiserver.yaml \
+add line bellow: \
+- --service-node-port-range=10-32767
