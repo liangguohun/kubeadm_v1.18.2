@@ -38,4 +38,4 @@ net tool dos2unix
 open port limit: \
 vi /etc/kubernetes/manifests/kube-apiserver.yaml \
 add line bellow:  \
-- --service-node-port-range=10-32767
+`- --service-node-port-range=10-32767`
